@@ -24,7 +24,7 @@ return 100*number;
  */
 function myMap(array,func){
 
-    const inputArray=[];
+const inputArray=[];
 for(let i=0;i<array.length;i++){
 inputArray.push(func(array[i]));
 }

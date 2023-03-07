@@ -37,8 +37,12 @@ export function showTitles() {
 export function findTitles() {
     let titles = [];
 
-
     titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];  //FIX THIS!!
+for(let i=0;i<library.length;i++){
+    if(library[i]==titles){
+       
+    }
+}
     // implement this and other functions
     return titles;
 }
@@ -54,6 +58,7 @@ export function addBook() {
     //alert("title:  " + title);
 
     const newID = library.length + 5000;  // hack to get a unique id for now
+   
     //finish the implementation -- get the author, create a book object, and add to the library array
 }
 
@@ -62,6 +67,14 @@ export function addBook() {
  * @returns {Array} find all  authors in libraryBooks and return them in alphabetically ordered array.
  */
 export function findAuthors() {
+
+    let author=[];
+
+    for(let i=0;i<library.author.length;i++){
+        if(library.author[i]==author){
+            return author;
+        }
+    }
 //implement this
 
 }
@@ -81,6 +94,12 @@ export function findIDs() {
 which will be represented as a global array named libraryBooks.  createBook should return the newly created book.
  */
 export function createBook(){
+
+    const newBook={title:title,
+        author:author,
+        libraryId:libraryId
+
+    }
 //implement this
     return null;
 }
