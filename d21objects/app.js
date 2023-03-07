@@ -61,7 +61,7 @@ export function addBook() {
    
     //finish the implementation -- get the author, create a book object, and add to the library array
     
-    const Book={author:"My New Book",title:"Me Too",libraryID:1144};
+    const Book={author:"My New Book",title:"Me Too",libraryID:1254};
     return;//no return because we just want to add.
 }
 
@@ -88,14 +88,14 @@ export function findAuthors() {
  * @returns {Array} find all the libraryIDs in libraryBooks and return them in an alphabetically ordered array.
 */
 export function findIDs() {
-    const id=[];
-    for(const book of library){
-        id.push(book.ids);
-    }
-//implement this
-return id;
+        //implement this
+        const ids=[];
+        for(const book of library){
+            ids.push(book.libraryID);
+        }
+         return ids.sort();
+            }
 
-}
 
 
 /**
@@ -103,12 +103,12 @@ return id;
  * createBook, which will take title, author, and libraryID as inputs.  It will create a new book object and add it to the library, 
 which will be represented as a global array named libraryBooks.  createBook should return the newly created book.
  */
-export function createBook(author,title,libraryID){
-    newBook=[];
-    let Book={author:author,title:title,
-        libraryID:libraryID};
+export function createBook(title,authors,libraryIDs){
+    
+    const newBook={title:title,author:authors,
+        libraryID:libraryIDs};
 //implement this
-return newBook.push(Book);
+return newBook;
 
 }
 
@@ -117,6 +117,8 @@ return newBook.push(Book);
  * @returns {undefined} 
  */
 export function scramble(){
+
+
     console.log("implement scramble if you have time ...");
 
 }

@@ -2,7 +2,7 @@
 import assert from "node:assert/strict"; 
 
 import {findTitles, findAuthors , findIDs, createBook} from "./app.js";  //do this for all of the app.js functions used in the Mocha tests
-
+import {gradeQuiz, calculateAverageScore} from"./student.js";
 
 /*
 Write a JavaScript program that will accept title, author, and libraryID values from an HTML page and create new book objects for each entry.  
@@ -46,3 +46,5 @@ describe("library", function () {
     });
 
 });
+
+
