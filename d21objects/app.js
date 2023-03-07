@@ -37,7 +37,7 @@ export function showTitles() {
 export function findTitles() {
     let titles = [];
 
-    titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];  //FIX THIS!!
+    //titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];  //FIX THIS!!
 for(const book of library){
     titles.push(book.title);
        
@@ -61,7 +61,7 @@ export function addBook() {
    
     //finish the implementation -- get the author, create a book object, and add to the library array
     
-    const Book={author:"ABC",title:"ABC world",libraryID:400};
+    const Book={author:"My New Book",title:"Me Too",libraryID:1144};
     return;//no return because we just want to add.
 }
 
@@ -72,12 +72,12 @@ export function addBook() {
 export function findAuthors() {
     //implement this
 
-    const author=[];
+    const authors=[];
 
     for(const book of library){
-        author.push(book.author);
+        authors.push(book.author);
     }
-            return author;
+            return authors;
         }
 
 
@@ -88,13 +88,12 @@ export function findAuthors() {
  * @returns {Array} find all the libraryIDs in libraryBooks and return them in an alphabetically ordered array.
 */
 export function findIDs() {
-
-    const ids=[];
+    const id=[];
     for(const book of library){
-        ids.push(book.ids);
+        id.push(book.ids);
     }
 //implement this
-return ids;
+return id;
 
 }
 
@@ -105,13 +104,12 @@ return ids;
 which will be represented as a global array named libraryBooks.  createBook should return the newly created book.
  */
 export function createBook(author,title,libraryID){
-
-    const newBook={author:author,title:title,
-        libraryID:libraryID,
-
-    };
+    newBook=[];
+    let Book={author:author,title:title,
+        libraryID:libraryID};
 //implement this
-    return newBook;
+return newBook.push(Book);
+
 }
 
 /**
