@@ -38,11 +38,11 @@ export function findTitles() {
     let titles = [];
 
     titles = ["Mockingjay: The Final Book of The Hunger Games", "The Road Ahead", "Walter Isaacson"];  //FIX THIS!!
-for(let i=0;i<library.length;i++){
-    if(library[i]==titles){
+for(const book of library){
+    titles.push(book.title);
        
     }
-}
+    const sorted=titles.sort();
     // implement this and other functions
     return titles;
 }
@@ -60,6 +60,9 @@ export function addBook() {
     const newID = library.length + 5000;  // hack to get a unique id for now
    
     //finish the implementation -- get the author, create a book object, and add to the library array
+    
+    const Book={author:"ABC",title:"ABC world",libraryID:400};
+    return;//no return because we just want to add.
 }
 
 /**
@@ -67,24 +70,32 @@ export function addBook() {
  * @returns {Array} find all  authors in libraryBooks and return them in alphabetically ordered array.
  */
 export function findAuthors() {
+    //implement this
 
-    let author=[];
+    const author=[];
 
-    for(let i=0;i<library.author.length;i++){
-        if(library.author[i]==author){
+    for(const book of library){
+        author.push(book.author);
+    }
             return author;
         }
-    }
-//implement this
 
-}
+
+
 
 /**
  * 
  * @returns {Array} find all the libraryIDs in libraryBooks and return them in an alphabetically ordered array.
 */
 export function findIDs() {
+
+    const ids=[];
+    for(const book of library){
+        ids.push(book.ids);
+    }
 //implement this
+return ids;
+
 }
 
 
@@ -93,15 +104,14 @@ export function findIDs() {
  * createBook, which will take title, author, and libraryID as inputs.  It will create a new book object and add it to the library, 
 which will be represented as a global array named libraryBooks.  createBook should return the newly created book.
  */
-export function createBook(){
+export function createBook(author,title,libraryID){
 
-    const newBook={title:title,
-        author:author,
-        libraryId:libraryId
+    const newBook={author:author,title:title,
+        libraryID:libraryID,
 
-    }
+    };
 //implement this
-    return null;
+    return newBook;
 }
 
 /**
