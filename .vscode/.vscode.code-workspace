@@ -1,0 +1,62 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../2018dubsSchedule_files"
+		},
+		{
+			"path": "../d14arrays"
+		},
+		{
+			"path": "../d14demo"
+		},
+		{
+			"path": "../d15fnExps"
+		},
+		{
+			"path": "../d21objects"
+		},
+		{
+			"path": "../d22methods"
+		},
+		{
+			"path": "../d23dataTypes"
+		},
+		{
+			"path": "../d24arrayMethods"
+		},
+		{
+			"path": "../d25practice"
+		},
+		{
+			"path": "../d31destructure"
+		},
+		{
+			"path": "../d32closures"
+		},
+		{
+			"path": "../d33scheduledCallbacks"
+		},
+		{
+			"path": "../d34callContext"
+		},
+		{
+			"path": "../d35AdvFuncExercises"
+		},
+		{
+			"path": "../d36inheritance"
+		},
+		{
+			"path": "../d41class"
+		},
+		{
+			"path": "../demos"
+		},
+		{
+			"path": "../node_modules"
+		}
+	],
+	"settings": {}
+}

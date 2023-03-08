@@ -30,8 +30,14 @@ bank.saveTransaction = function (id, amount) {
 };
 
 bank.debit = function (id, amount) {
+    const customer = bank.transactionsDB.find(customer => customer.customerId === id);
+    customer.customerTransactions.push(-1*amount);
     /* make sure current balance is > amount */
-//IMPLEMENT THIS
+    //IMPLEMENT THIS
+    const currentBalance = this.getBalance(id);
+   if (currentBalance >= amount) {
+    customer.customerTransactions.push(-1 * amount);
+  }
 };
 
 bank.credit = function (id, amount) {
@@ -39,15 +45,27 @@ bank.credit = function (id, amount) {
 };
 
 bank.getBalance = function (id) {
-//IMPLEMENT THIS
+    //IMPLEMENT THIS
+    const customer=bank.transactionsDB.find((customer)=>
+    customer.customerId===id);
+    let balance=0;
+    for(let i=0;i<customer.customerTransactions.length;i++){
+        balance+=customer.customerTransactions[i];
+    }
+    return this.balance;
+
 };
-
-
-
 /**
  * @returns {number}  returns sum of all balances
  */
 bank.bankBalance = function () {
+    let bankBalance=0;
+    for(let i=0;i<this.transactionsDB.length;i++){
+        const customer=this.transactionsDB[i];
+        bankBalance+=this.getBalance(customer.customerId);
+    }
+    return this.bankBalance;
+    
 //IMPLEMENT THIS
 };
 
