@@ -1,4 +1,4 @@
-//"use strict";
+"use strict";
 
 export const Calculator = {
     a:0,
@@ -9,9 +9,9 @@ export const Calculator = {
     },  
 
 sum:function(){
-    return this.a+this.b;// implement this
+    return this.aValue+this.bValue;// implement this
 },
 mul:function(){
-    return this.a*this.b;
+    return this.aValue*this.bValue;
 }
 };

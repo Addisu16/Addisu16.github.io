@@ -12,7 +12,7 @@ The bank object should have a transactionsDB property, which will be an array of
 
 */
 
-const bank = {
+export const bank = {
     transactionsDB: [],
 };
 bank.transactionsDB = [
@@ -36,7 +36,7 @@ bank.debit = function (id, amount) {
     //IMPLEMENT THIS
     const currentBalance = this.getBalance(id);
    if (currentBalance >= amount) {
-    customer.customerTransactions.push(-1 * amount);
+    customer.customerTransactions.push(-1*amount);
   }
 };
 
@@ -46,13 +46,12 @@ bank.credit = function (id, amount) {
 
 bank.getBalance = function (id) {
     //IMPLEMENT THIS
-    const customer=bank.transactionsDB.find(customer=>
-    customer.customerId===id);
-    let balance=0;
-    for(let i=0;i<customer.customerTransactions.length;i++){
-        balance+=customer.customerTransactions[i];
+    const customer=bank.transactionsDB.find(customer=>customer.customerId===id);
+    let totalAmt=0;
+    for(const amt of customer.customerTransactions){
+        totalAmt+=amt;
     }
-    return balance;
+    return totalAmt;
 
 };
 /**
@@ -60,27 +59,17 @@ bank.getBalance = function (id) {
  */
 bank.bankBalance = function () {
     let bankBalance=0;
-    for(let i=0;i<this.transactionsDB.length;i++){
-        const customer=this.transactionsDB[i];
+    for(const customer of this.transactionsDB){
         bankBalance+=this.getBalance(customer.customerId);
     }
     return bankBalance;
     
 //IMPLEMENT THIS
 };
+console.log("expect 55: ",bank.getBalance(3));
 
-console.log(bank.getBalance(10)); 
-console.log(bank.bankBalance()); 
-
-bank.debit(10, 30);
-console.log(bank.getBalance(11)); 
-console.log(bank.bankBalance()); 
-
-bank.credit(11, 20);
-console.log(bank.getBalance(12)); 
-console.log(bank.bankBalance()); 
 
 
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-module.exports= {bank }; //add all of your object names here that you need for the node mocha tests
+// module.exports= {bank }; //add all of your object names here that you need for the node mocha tests
