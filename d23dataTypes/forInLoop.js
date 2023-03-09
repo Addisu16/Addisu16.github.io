@@ -10,7 +10,7 @@ let car={
 
 
 for(const key in car){
-    console.log(key+" "+car[key]);
+    console.log(key+" "+car.model);
 }
 
 
@@ -18,6 +18,6 @@ for(const key in car){
 
 for(const key1 in car){
     if(car.hasOwnProperty(key1)){
-        console.log(key1+""+car[key1])
+        console.log(car[key1])
     }
 }
