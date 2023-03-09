@@ -1,17 +1,17 @@
-"use strict";
+//"use strict";
 
-export const Calculator = {
+export const calculator = {
     a:0,
     b:0,
     setValues: function(aValue,bValue){
       this.a=aValue;
       this.b=bValue;
-    },  
+    },
 
 sum:function(){
-    return this.aValue+this.bValue;// implement this
+    return this.a+this.b;// implement this
 },
 mul:function(){
-    return this.aValue*this.bValue;
-}
+    return this.a*this.b;}
 };
+

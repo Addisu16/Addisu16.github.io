@@ -1,18 +1,13 @@
-"use strict";
-/* global assert  ucFirst checkSpam truncate extractCurrencyValue camelize  */
-/* comment out the node specific code when going to the browser*/
-const assert = require("assert");  //always need this with node
-const myExports = require("./app.js");  //with node need the name of your file with your functions here
-const getMaxSubSum = myExports.getMaxSubSum;  //do this for all of the functions used in the Mocha tests
-const ucFirst = myExports.ucFirst; 
-const truncate = myExports.truncate; 
-const camelize = myExports.camelize; 
+/* comment out the import assert line when running in the browser */
+import assert from "node:assert/strict"; 
+
+import { ucFirst, getMaxSubSum, truncate , camelize, checkSpam, extractCurrencyValue} from "./app.js";
 
  
 /* eslint-disable quotes */
 describe("ucFirst", function() {
   it('Uppercases the first symbol', function() {
-    assert.strictEqual(ucFirst("john"), "John");
+    assert.strictEqual(ucFirst("john"),"John");
   });
 
   it("Doesn't die on an empty string", function() {
@@ -49,7 +44,6 @@ describe("truncate", function() {
       "Hi everyone!"
     );
   });
-
 });
 
 describe("extractCurrencyValue", function() {

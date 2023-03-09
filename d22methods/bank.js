@@ -31,12 +31,11 @@ bank.saveTransaction = function (id, amount) {
 
 bank.debit = function (id, amount) {
     const customer = bank.transactionsDB.find(customer => customer.customerId === id);
-    customer.customerTransactions.push(-1*amount);
     /* make sure current balance is > amount */
     //IMPLEMENT THIS
     const currentBalance = this.getBalance(id);
-   if (currentBalance >= amount) {
-    customer.customerTransactions.push(-1*amount);
+   if (currentBalance > amount) {
+    customer.customerTransactions.push(-amount);
   }
 };
 

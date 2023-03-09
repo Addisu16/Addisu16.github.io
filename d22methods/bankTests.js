@@ -5,6 +5,7 @@
 // const assert = require("assert");  //always need this with node
 // const myExports = require("./bank.js").default;  //with node need the name of your file with your functions here
 // const bank = myExports.bank;  //do this for all of the functions used in the Mocha tests
+import assert from "node:assert/strict"; 
 import {bank} from"./bank.js";
 
 describe("bank tests", function () {

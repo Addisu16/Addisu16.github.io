@@ -1,16 +1,17 @@
 //"use strict";
-/* global assert calculator */
+/*global assert calculator */
 
 /* comment out the following for the browser */
 // const assert = require("assert");  //always need this with node
 // const myExports = require("./calculator.js");  //with node need the name of your file with your functions here
 // const calculator = myExports.calculator;  //do this for all of the functions used in the Mocha tests
+import assert from "node:assert/strict"; 
 import {calculator} from"./calculator.js";
 
 
 
 describe("test calculator with values 2, 3", function () {
-    calculator.setValues(2, 3);  //values for the tests
+    calculator.setValues(2,3);  //values for the tests
 
     it("checks initial values 2 and 3", function () {
         assert.strictEqual(calculator.a, 2);
