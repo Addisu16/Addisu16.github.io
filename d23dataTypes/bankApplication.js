@@ -17,7 +17,7 @@
                 }
             },
             checkBalance:function(){
-                console.log(`your balance is ${this.balance}`);
+               return this.balance;
             }
 
         };
