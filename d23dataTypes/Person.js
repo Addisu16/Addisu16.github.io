@@ -4,7 +4,7 @@
 
 const person={//Person is an object
     name:"Addisu",//property
-    age:30,
+    age:50,
     email:"addispink16@gmail.com",
     address:{//address is another object and the rest are property
         street:"1000 N 4th street",
@@ -38,4 +38,8 @@ const person1={
 };
 person1.sayHello();
 
-
+function findPros(){
+   for(const key in person1){
+   console.log(key+""+person1[key]);
+   }
+}

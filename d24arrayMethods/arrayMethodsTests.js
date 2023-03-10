@@ -1,20 +1,12 @@
-"use strict";
-/* global assert    */
-/* comment out the node specific code when going to the browser*/
-const assert = require("assert");  //always need this with node
-const myExports = require("./methods.js");  //with node need the name of your file with your functions here
-const groupById = myExports.groupById;  //do this for all of the functions used in the Mocha tests
-const unique = myExports.unique;
-const filterRangeInPlace = myExports.filterRangeInPlace;
-const filterRange = myExports.filterRange;
-const Calculator = myExports.Calculator;
+/* eslint-disable id-length */
+/* comment out the import assert line when running in the browser */
+import assert from "node:assert/strict"; 
 
-
+import { groupById, unique, filterRangeInPlace, filterRange, Calculator} from "./methods.js";
     
 
 /*
 Write a function filterRange(arr, a, b) that gets an array arr, looks for elements with values higher or equal to a and lower or equal to b and return a result as an array.
-
 The function should not modify the array. It should return the new array.
 */
 describe("filterRange", function () {
@@ -33,7 +25,6 @@ describe("filterRange", function () {
 
 /*
 Write a function filterRangeInPlace(arr, a, b) that gets an array arr and removes from it all values except those that are between a and b. The test is: a ≤ arr[i] ≤ b.
-
 The function should only modify the array. It should not return anything.
 */
 describe("filterRangeInPlace", function () {
@@ -50,7 +41,6 @@ describe("filterRangeInPlace", function () {
 
 /* 
 Create a constructor function Calculator that creates “extendable” calculator objects.
-
 The task consists of two parts.  (see https://javascript.info/array-methods)
 */
 describe("Calculator", function () {
@@ -101,15 +91,15 @@ describe("groupById", function() {
 
     it("creates an object grouped by id", function() {
       let users = [
-        {id: 'john', name: "John Smith", age: 20},
-        {id: 'ann', name: "Ann Smith", age: 24},
-        {id: 'pete', name: "Pete Peterson", age: 31},
+        {id: "john", name: "John Smith", age: 20},
+        {id: "ann", name: "Ann Smith", age: 24},
+        {id: "pete", name: "Pete Peterson", age: 31},
       ];
   
       assert.deepEqual(groupById(users), {
-        john: {id: 'john', name: "John Smith", age: 20},
-        ann: {id: 'ann', name: "Ann Smith", age: 24},
-        pete: {id: 'pete', name: "Pete Peterson", age: 31},
+        john: {id: "john", name: "John Smith", age: 20},
+        ann: {id: "ann", name: "Ann Smith", age: 24},
+        pete: {id: "pete", name: "Pete Peterson", age: 31},
       });
     });
   

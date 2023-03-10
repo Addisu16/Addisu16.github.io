@@ -1,24 +1,47 @@
-"use strict"
+export function filterRange(arr, a, b) {
+  return arr.filter(x => a <= x && x <= b);
+}
 
-/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
-module.exports = { groupById, unique, filterRangeInPlace, filterRange, Calculator }; //add all of your function names here that you need for the node mocha tests
-
-
-function filterRange(arr, a, b) {
+export function filterRangeInPlace(arr, a, b) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < a || arr[i] > b) {
+      arr.splice(i, 1);
+      i--;
+    }
   }
+}
 
- 
-  function filterRangeInPlace(arr, a, b) {
+export function Calculator() {
+  this.methods = {
+    "+": (a, b) => a + b,
+    "-": (a, b) => a - b,
+  };
 
-  }
- 
+  this.calculate = function(str) {
+    let split = str.split(" ");
+    let a = +split[0];
+    let op = split[1];
+    let b = +split[2];
 
-  function Calculator() {
-  }
+    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+      return NaN;
+    }
 
-  function unique(arr) {
-  }
+    return this.methods[op](a, b);
+  };
 
+  this.addMethod = function(name, func) {
+    this.methods[name] = func;
+  };
+}
 
-  function groupById(array) {
-  }
+export function unique(arr) {
+  return Array.from(new Set(arr));
+}
+
+export function groupById(array) {
+  return array.reduce((acc, obj) => {
+    acc[obj.id] = obj;
+    return acc;
+  }, {});
+}
