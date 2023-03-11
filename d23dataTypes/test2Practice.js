@@ -14,7 +14,6 @@ const dailyRecord=[day1,day2];
 
 
 function dailyTotal(donations){
-
 let totalAmount=0;
 for(let i=0;i<donations.length;i++){
     totalAmount+=donations[i].amount
@@ -38,12 +37,12 @@ function totalDonations(dailyRecord){
         let total = 0;
         for (let i = 0; i < dailyRecord.length; i++) {
           const day = dailyRecord[i];
-          const dayTotal = dailyTotalForLoop(day.donations);
+          const dayTotal = dailyTotal(day.donations);
           total += dayTotal;
         }
         return total;
       }
-      function dailyTotalForLoop(donations) {
+      function dailyTotal(donations) {
         let total = 0;
         for (let i = 0; i < donations.length; i++) {
           total += donations[i].amount;

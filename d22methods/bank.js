@@ -48,7 +48,8 @@ bank.getBalance = function (id) {
     const customer=bank.transactionsDB.find(customer=>customer.customerId===id);
     let totalAmt=0;
     for(const amt of customer.customerTransactions){
-        totalAmt+=amt;
+
+34        totalAmt+=amt;
     }
     return totalAmt;
 
@@ -66,6 +67,11 @@ bank.bankBalance = function () {
 //IMPLEMENT THIS
 };
 console.log("expect 55: ",bank.getBalance(3));
+
+function Comparator(bal1,bal2){
+    return bal1.gid-bal2.gid;
+
+}
 
 
 
