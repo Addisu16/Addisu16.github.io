@@ -42,7 +42,7 @@ function totalDonations(dailyRecord){
         }
         return total;
       }
-      function dailyTotal(donations) {
+      function dailyTotall(donations) {
         let total = 0;
         for (let i = 0; i < donations.length; i++) {
           total += donations[i].amount;
@@ -63,7 +63,7 @@ console.log("expect 131:",totalDonations(dailyRecord));
 function findBigDonations(dailyRecord,maxAmount){
     const bigDonations=[];
     for(let i=0;i<dailyRecord.length;i++){
-        const day=dailyTotalForLoop(day.donations);
+        const day=dailyTotal(day.donations);
         if(dailyTotal>maxAmount){
             bigDonations.push({day:day.date,amount:dailyTotal});
         }
