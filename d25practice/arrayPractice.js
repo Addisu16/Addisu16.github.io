@@ -32,4 +32,31 @@ export function doubleNums(arr){
         return arr.includes(person => person.age%2===0);
     
     }
-    
+    export function sum(arr) {
+        return arr.reduce((acc, curr) => acc + curr, 0);
+      }
+      export function average(arr) {
+        return arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
+      }
+      export function max(arr) {
+        return arr.reduce((acc, curr) => Math.max(acc, curr), arr[0]);
+      }
+      export function maxAge(arr) {
+        return arr.reduce((acc, curr) => Math.max(acc, curr.age), arr[0].age);
+      }
+      export function sumEvens(arr) {
+        return arr.filter(person => person.age % 2 === 0)
+                  .map(person => person.age)
+                  .reduce((acc, curr) => acc + curr, 0);
+      }
+      export function sumOdds(arr) {
+        return arr.filter(person => person.age % 2 !== 0)
+                  .map(person => person.age)
+                  .reduce((acc, curr) => acc + curr, 0);
+      }
+      
+      
+      
+      
+      
+      
