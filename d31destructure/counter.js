@@ -1,4 +1,4 @@
-function makeCiunter(){
+function makeCounter(){
    let count=0;
     const innerFunc=function(){
         count+=1;
@@ -6,6 +6,7 @@ function makeCiunter(){
     }
     return innerFunc;
     }
-    const counter1=makeCiunter();
-    const counter2=makeCiunter();
+    const counter1=makeCounter();
+    const counter2=makeCounter();
 console.log(counter1());
+console.log(counter2());
