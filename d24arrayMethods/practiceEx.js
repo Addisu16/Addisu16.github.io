@@ -9,21 +9,32 @@ const day2={donations:[donation3,donation4,donation5],date:"03/10/2023"};
 const dailyRecord=[day1,day2];
 
 //1. use for loop in a function,dailyTotal to find the total amount donated for a given day 
-//console.log("expect 21:",dailyTotal(day2.donations));
+console.log("expect 21:",dailyTotal(day2.donations));
+function dailyTotal(donations){
+    let total=0;
+    for(let i=0;i<donations.length;i++){
+        total+=donations[i].amount;
+        
+    }
+    return total;
+}
 
 
+//2. use reduce in a function,dailyTotalReduce,to find the total amount donated for a given day.
 
-//use reduce in a function,dailyTotalReduce,to find the total amount donated for a given day.
+function dailyTotalReduce(donations){
+    return donations.reduce(());
+}
 //console.log("expect 110.",dailyTotalReduce(day1.donations));
 
 
-//write a function totalDonations using a for loop what will find the total donations across all days in the dailyRecord array.
+//3.write a function totalDonations using a for loop what will find the total donations across all days in the dailyRecord array.
 //console.log("expect 131:",totalDonations(dailyRecord));
 
       
 
 
-//write a function,findBigDonations,that will return an array with all the dates that daily donations exceeded the maximum amount
+//4. write a function,findBigDonations,that will return an array with all the dates that daily donations exceeded the maximum amount
 //goal.Each entry in the array should be an object that contains the date,and the total amount donated.The second parameter for your function should
 //be the maximum amount goal.For the example below,the result should return the date and amounts for every donations that had an amount>10.
 //in this example those are donation 1 and 2.
@@ -31,7 +42,7 @@ const dailyRecord=[day1,day2];
 //{day:"03/10/2023",amount:15}:`,findBigDonations(dailyRecord,10));
 
 
-  // write a function, sortByAverage,that sorts the daily records by average donation in ascending order.
+  //5.  write a function, sortByAverage,that sorts the daily records by average donation in ascending order.
 
   
   
