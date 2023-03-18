@@ -1,7 +1,7 @@
 /* comment out the import assert line when running in the browser */
 import assert from "node:assert/strict"; 
 
-import {makeBank} from "./bank.js";
+import {makeBank} from"./bank.js";
 
 describe("bank tests", function () {
 
@@ -14,6 +14,5 @@ describe("bank tests", function () {
         assert.strictEqual(bank.transactionsDB in bank, false);
     });
 });
-
 
 

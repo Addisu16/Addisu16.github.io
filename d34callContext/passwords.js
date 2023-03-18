@@ -1,37 +1,39 @@
-"use strict";
-/* exports at end of file since exporting an object, which can only be referenced after definition */
-/* eslint-disable */
 
-
-function askPassword(ok, fail, password) {
-
+export function askPassword(ok,fail,password) {
+    if(password==="rockstar"){
+        return ok();
+    }else{
+        return fail();
+    }
 }
+ export let user = {
+    userName:"John",
+    password:"rockstar",
 
-let user = {
-
-
-
+    loginOk(){
+        return `${this.userName} logged in`;
+    },
+    loginFail(){
+        return `${this.userName} failed to log in`
+    },
 };
 
+ export function askPassword2(ok, fail, password) {
 
-
-
-
-
-
-function askPassword2(ok, fail, password) {
-
+    if(password==='rockstar'){
+        return ok();
+    }else{
+        return fail();
 }
-
-let user2 = {
-
+}
+ export let user2 = {
+    userName:"John",
+    password:"rockstar",
+    loginOk(){
+        return `${this.userName} logged in`;
+    },
+    loginFail(){
+        return `${this.userName} failed to log in`;
+    }
 };
 
-
-
-
-
-
-/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
-*/
-module.exports = {askPassword, user, askPassword2, user2 }; //add all of your function names here that you need for the node mocha tests

@@ -26,10 +26,8 @@ quiz.key = [{ qid: 1, ans: "b" }, { qid: 2, ans: "a" }, { qid: 3, ans: "b" }];
  * @returns {number} difference of the identifiers
  */
 function answerComparator(ans1, ans2) {
-    return ans1.qid - ans2.qid;
-        //IMPLEMENT THIS
-    }
-
+//IMPLEMENT THIS
+}
 
 /**
  * 
@@ -40,30 +38,14 @@ function answerComparator(ans1, ans2) {
  * compare them against key and add up matches
  */
 quiz.scoreStudent = function (sid) {
-    const student = quiz.students.find(student => student.sid === sid);
-    let totalPts=0;
-    student.answers.sort(answerComparator);
-    for(let i=0;i<student.answers.length;i++){
-        if(student.answers[i].ans===quiz.key[i].ans){
-            totalPts++;
-        }
-
-    }
-    return totalPts;
-
-    //IMPLEMENT THIS
+//IMPLEMENT THIS
 };
 
 /**
  * @returns {number} average score of all students
  * go through list of students and get score of each, then the average
  */
-quiz.getAverage = function () {
-    //IMPLEMENT THIS
-    let totalMark = 0;
-    for(const student of quiz.students){
-        totalMark += this.scoreStudent(student.sid);
-    }
-    return totalMark / quiz.students.length;
+quiz.getAverage = function(){
+//IMPLEMENT THIS
 
 };

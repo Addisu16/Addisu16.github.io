@@ -64,27 +64,22 @@ describe("byField", function () {
     let ageSortedAnswer = users.sort(byField("age"));
     assert.deepEqual(ageSortedAnswer, ageSortedKey);
   });
-
   it("sorts users by surname", function () {
     let surnameSortedKey = [
       { name: "Ann", age: 19, surname: "Hathaway" },
       { name: "John", age: 20, surname: "Johnson" },
       { name: "Pete", age: 18, surname: "Peterson" },
     ];
-    let surnameSortedAnswer = users.sort(byField("surname"));
+
+  let surnameSortedAnswer = users.sort(byField("surname"));
     assert.deepEqual(surnameSortedAnswer, surnameSortedKey);
   });
-
   describe("army", function () {
-
     let army = makeArmy();
-
-
     it("army[0] shows 0", function () {
       const shooter0 = army[0]();
       assert.strictEqual(shooter0, 0);
     });
-
     it("army[5] shows 5", function () {
       const shooter5 = army[5]();
       assert.strictEqual(shooter5, 5);

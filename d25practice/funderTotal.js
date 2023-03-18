@@ -3,7 +3,7 @@
  * 
  * @param {Array} dailyRec 
  * @param {number} funderId 
- * @returns{Object} 
+ * @returns {Array} Array of object
  */
 
 
