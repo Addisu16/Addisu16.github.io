@@ -8,6 +8,7 @@
  */
 export function Accumulator(initialValue, increment) {
     this.increment = increment;
+    this.initialValue=initialValue;
     this.currentValue = initialValue;
     this.accumulate = function () {
         this.currentValue = this.currentValue + increment;
