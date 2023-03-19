@@ -62,7 +62,7 @@ quiz.getAverage = function () {
     //IMPLEMENT THIS
     let totalMark = 0;
     for(const student of quiz.students){
-        totalMark += this.scoreStudent(student.sid);
+        totalMark += quiz.scoreStudent(student.sid);
     }
     return totalMark / quiz.students.length;
 
