@@ -1,4 +1,4 @@
-"use strict";
+
 /* global assert doubleNums  doubleAges filterEven filterOver10 findEvenNum findEvenAge */
 /* comment out the node specific code when going to the browser
 const assert = require("assert");  //always need this with node
@@ -10,7 +10,8 @@ const filterOver10 = myExports.filterOver10;
 const findEvenNum = myExports.findEvenNum;
 const findEvenAge = myExports.findEvenAge;  
 */ 
-
+import assert from "node:assert/strict"; 
+import{doubleNums,doubleAges,filterEven,filterOver10,findEvenNum,findEvenAge,includesEvenNum,includesEvenAge}from"./arrayPractice.js";
 let numArray;
 let peopleArray;
 
@@ -67,7 +68,11 @@ describe("filter practice", function () {
     });
 
     /* complete the following similar to includes even test */
-    it("includes even age -- write this test");
+    it("includes even age",function(){
+        assert.deepEqual(findEvenAge(peopleArray), { name: "William", age: 6 });
+        const peopleEvenAge = [{ name: "Sam", age: 14 }, { name: "Lucy", age: 12 }, { name: "Barney", age: 80  }];
+        assert.deepEqual(findEvenAge(peopleEvenAge), undefined);
+    });
 
 });
 

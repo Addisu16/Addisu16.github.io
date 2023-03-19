@@ -8,8 +8,10 @@ export function doubleNums(arr){
     }
     
     export function filterEven(arr){
-        return arr.filter(num => num % 2 === 0);
+      if(number%2===0){
+        return number;
     }
+  }
     
     export function filterOver10(arr) {
         return arr.filter(person => person.age > 10);
@@ -32,24 +34,24 @@ export function doubleNums(arr){
         return arr.includes(person => person.age%2===0);
     
     }
-    export function sum(arr) {
+   function sum(arr) {
         return arr.reduce((acc, curr) => acc + curr, 0);
       }
-      export function average(arr) {
+     function average(arr) {
         return arr.reduce((acc, curr) => acc + curr, 0) / arr.length;
       }
-      export function max(arr) {
+function max(arr) {
         return arr.reduce((acc, curr) => Math.max(acc, curr), arr[0]);
       }
-      export function maxAge(arr) {
+    function maxAge(arr) {
         return arr.reduce((acc, curr) => Math.max(acc, curr.age), arr[0].age);
       }
-      export function sumEvens(arr) {
+      function sumEvens(arr) {
         return arr.filter(person => person.age % 2 === 0)
                   .map(person => person.age)
                   .reduce((acc, curr) => acc + curr, 0);
       }
-      export function sumOdds(arr) {
+      function sumOdds(arr) {
         return arr.filter(person => person.age % 2 !== 0)
                   .map(person => person.age)
                   .reduce((acc, curr) => acc + curr, 0);
