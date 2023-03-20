@@ -186,3 +186,51 @@ function myFunction8(value,index) {
   }
 
 }
+
+
+/*
+array.copyWithin(target, start, end)
+*/
+
+//entries() method returns an object with key values
+
+let names=["addis","addisu","adda"];
+let entry=names.entries();
+for(let entries of entry){
+  console.log(entries);//[ 0, 'addis' ]
+ // [ 1, 'addisu' ]
+  //[ 2, 'adda' ]
+}
+//fill()value fills the array by the given value;
+/*Definition and Usage
+The fill() method fills specified elements in an array with a value.
+
+The fill() method overwrites the original array.
+
+Start and end position can be specified. If not, all elements will be filled.
+*/
+//syntax:array.fill(value, start, end)//start:start index and end:is end index
+
+//return value is the array with filled value
+/*
+Definition and Usage
+The filter() method creates a new array filled with elements that pass a test provided by a function.
+
+The filter() method does not execute the function for empty elements.
+
+The filter() method does not change the original array.
+*/
+
+const ages=[10,23,14,20];
+
+const age=ages.find((value)=>{if(value>18){
+    console.log(value);
+}
+});
+
+
+const myTimeOut=setTimeout(() => {//The setTimeOut() method executes only once
+  console.log("Happy birth day");
+  
+},3000);
+//if you need to execute for different times use setInterval()method 

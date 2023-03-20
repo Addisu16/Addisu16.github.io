@@ -17,3 +17,10 @@ function isEven(num) { return num % 2 === 0;}
 myCallback(cube, 10); // 1000
 
 myCallback(isEven, 10); // true 
+
+const prime=[1,2,3];
+let i=0;
+while(i<prime.length){
+    console.log(prime[i]);
+    i++;
+}
