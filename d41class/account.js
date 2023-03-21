@@ -68,8 +68,8 @@ export class Account {
         }
         this.#balance -= amount;
     }
-    setBalance(amount){
-        this.#balance=amount;
+    setBalance(amount) {
+        this.#balance = amount;
     }
 
     /**
@@ -84,7 +84,7 @@ export class Account {
      * 
      * @returns {undefined}
      */
-    endOfMonth(){
+    endOfMonth() {
         return ""; // does nothing
     }
 

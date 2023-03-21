@@ -9,26 +9,26 @@ export class Bank {
         this._accounts = []
     }
     addAccount() {
-        const number= Bank.accountNumber;
+        const number = Bank.accountNumber;
         Bank.accountNumber++;
-       
+
         const newAccount = new Account(number);
         this._accounts.push(newAccount);
 
     }
-    addSavingsAccount(interestRate){
-            const newSavingAccount = new SavingsAccount(this._accounts.length + 1, interestRate);
-            this._accounts.push(newSavingAccount);
-            
-    
+    addSavingsAccount(interestRate) {
+        const newSavingAccount = new SavingsAccount(this._accounts.length + 1, interestRate);
+        this._accounts.push(newSavingAccount);
+
+
     }
-    addCheckingAccount(overdraft){
-        const newCheckingAccount=new CheckingAccount(this._accounts.length+1,overdraft);
+    addCheckingAccount(overdraft) {
+        const newCheckingAccount = new CheckingAccount(this._accounts.length + 1, overdraft);
         this._accounts.push(newCheckingAccount);
     }
     // closeAccount(number){
     //     number.find((number)=>)
-    
+
 
 
 

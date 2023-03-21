@@ -21,18 +21,17 @@ export class CheckingAccount {
         this._number = accountNumber;
     }
     withdraw(amount) {
-       
-        if ((this.getBalance()-amount)< (-this.getOverdraft())) {
+
+        if ((this.getBalance() - amount) < (-this.getOverdraft())) {
             throw Error("you can't withdrwal ");
-        }else{
-        this._account.setBalance(this.getBalance()- amount);
+        } else {
+            this._account.setBalance(this.getBalance() - amount);
         }
-        
     }
     getBalance() {
         return this._account.getBalance();
     }
-    
+
     deposit(amount) {
         if (amount <= 0) {
             throw new RangeError("Deposit amount has to be greater than zero");
@@ -47,11 +46,11 @@ export class CheckingAccount {
         if (this.getBalance() < 0) {
             return `Warning, low balance CheckingAccount ${this._number}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
         }
-        if(this.getBalance>0){
+        if (this.getBalance > 0) {
             return "";
         }
-        }
     }
+}
 
 
 
