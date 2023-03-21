@@ -18,7 +18,6 @@ export class Account {
         this.#number = number; // the account number
         this.#balance = 0.0;
     }
-
     /**
      * Getter for the 'private' number field
      * 

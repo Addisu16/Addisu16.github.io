@@ -43,14 +43,14 @@ export class CheckingAccount {
         return `CheckingAccount ${this._number}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
     }
     endOfMonth() {
-        if (this.getBalance() < 0) {
+        if (this._account.getBalance()<0) {
             return `Warning, low balance CheckingAccount ${this._number}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
         }
-        if (this.getBalance > 0) {
-            return "";
+        return " ";
         }
     }
-}
+    
+
 
 
 

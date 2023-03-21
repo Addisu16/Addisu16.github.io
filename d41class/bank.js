@@ -26,16 +26,25 @@ export class Bank {
         const newCheckingAccount = new CheckingAccount(this._accounts.length + 1, overdraft);
         this._accounts.push(newCheckingAccount);
     }
-    // closeAccount(number){
-    //     number.find((number)=>)
-
-
-
-
-    toString() {
-        return;
+    getNumber(){
+        return this.number;
     }
+    closeAccount(number){
+        for(let i=0;i<this._accounts.length;i++){
+            if(this._accounts[i].number===this.getNumber()){
+                this._accounts.splice(i, 1);
+                return;
+                
+            }
+            else{
+                throw error("account not found !");
+            }
+        }
 
+    // toString(){
+    //     return null;
+    // }
 
+    }
 
 }
