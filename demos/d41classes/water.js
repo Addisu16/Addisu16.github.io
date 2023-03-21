@@ -23,3 +23,4 @@ class CoffeeMachine {
   // can't access privates from outside of the class
 
   console.log(machine.getWaterAmount());
+

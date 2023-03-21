@@ -1,38 +1,41 @@
-"use strict";
-/* global exports require Account   SavingsAccount CheckingAccount */
 
-/* exports at end of file since exporting an object, which can only be referenced after definition   */
+import { Account } from "./account.js";
+import { CheckingAccount } from "./checkingaccount.js";
+import { SavingsAccount } from "./savingsaccount.js";
+
+export class Bank {
+    static accountNumber = 1;
+    constructor() {
+        this._accounts = []
+    }
+    addAccount() {
+        const number= Bank.accountNumber;
+        Bank.accountNumber++;
+       
+        const newAccount = new Account(number);
+        this._accounts.push(newAccount);
+
+    }
+    addSavingsAccount(interestRate){
+            const newSavingAccount = new SavingsAccount(this._accounts.length + 1, interestRate);
+            this._accounts.push(newSavingAccount);
+            
     
-const acc = require("./account.js");//with node need the name of your file with your functions here
-const Account = acc.Account;  //do this for all of the functions used in the Mocha tests
-const chk = require("./checkingaccount.js");
-const CheckingAccount = chk.CheckingAccount;
-const sav = require("./savingsaccount.js");
-const SavingsAccount = sav.SavingsAccount; 
+    }
+    addCheckingAccount(overdraft){
+        const newCheckingAccount=new CheckingAccount(this._accounts.length+1,overdraft);
+        this._accounts.push(newCheckingAccount);
+    }
+    // closeAccount(number){
+    //     number.find((number)=>)
+    
 
 
 
-class Bank{}
+    toString() {
+        return;
+    }
 
 
 
-
-
-
-
-/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
-*/
-exports.Bank = Bank;
-
-
-
-
-
-
-
-
-
-
-/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
-*/
-exports.Bank = Bank;
+}

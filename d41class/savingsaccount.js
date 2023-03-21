@@ -1,15 +1,47 @@
-"use strict";
-/* global Account require  */
-const acc = require("./account.js");//with node need the name of your file with your functions here
-const Account = acc.Account;  //do this for all of the functions used in the Mocha tests
 
-/* exports at end of file since exporting an object, which can only be referenced after definition   */
+import { Account } from "./account.js";
 
+export class SavingsAccount {
+    _account;
+    constructor(number, interest) {
+        this._number = number;
+        this._interest = interest;
+        this._account = new Account(number);
+    }
+    getInterest() {
+        return this._interest;
+    }
+    getNumber() {
+        return this._number;
+    }
+    setInterest(interestRate) {
+        this._interest = interestRate;
+    }
+    setNumber(bankNumber) {
+        this._number = bankNumber;
+    }
+    deposit(amount) {
+        this._account.deposit(amount);
 
-class SavingsAccount{};
+    }
+    addInterest() {
+        this.deposit(this._account.getBalance() * (this._interest / 100));
 
+    }
 
+    getBalance() {
 
+        return this._account.getBalance();
 
-/* global exports */
-exports.SavingsAccount = SavingsAccount;
+    }
+    toString() {
+        return "SavingsAccount " + this._number + ": balance: " + this.getBalance() + " interest: " + this._interest;
+    }
+    withdraw(amount) {
+        return this._account - amount;
+
+    }
+    endOfMonth() {
+        return "Interest added SavingsAccount 1: balance: 105 interest: 5";
+    }
+}

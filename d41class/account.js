@@ -1,5 +1,3 @@
-"use strict";
-/* global exports */
 
 
 /**
@@ -7,15 +5,18 @@
  * 
  * Provides the basic functionality that every account should have
  */
-class Account {
+export class Account {
+    #balance;
+    #number;
+
     /**
      * Constructor for creating a new Account object
      * 
      * @param {number} number the number for this account
      */
     constructor(number) {
-        this._number = number; // the account number
-        this._balance = 0.0;
+        this.#number = number; // the account number
+        this.#balance = 0.0;
     }
 
     /**
@@ -24,7 +25,7 @@ class Account {
      * @returns {number} the account number
      */
     getNumber() {
-        return this._number;
+        return this.#number;
     }
 
     /**
@@ -33,7 +34,7 @@ class Account {
      * @returns {number} balance for this account
      */
     getBalance() {
-        return this._balance;
+        return this.#balance;
     }
 
     /**
@@ -47,7 +48,7 @@ class Account {
         if (amount <= 0) {
             throw new RangeError("Deposit amount has to be greater than zero");
         }
-        this._balance += amount;
+        this.#balance += amount;
     }
 
     /**
@@ -62,17 +63,20 @@ class Account {
         if (amount <= 0) {
             throw new RangeError("Withdraw amount has to be greater than zero");
         }
-        if (amount > this._balance) {
+        if (amount > this.#balance) {
             throw Error("Insufficient funds");
         }
-        this._balance -= amount;
+        this.#balance -= amount;
+    }
+    setBalance(amount){
+        this.#balance=amount;
     }
 
     /**
      * @returns {string} representation of this account
      */
     toString() {
-        return "Account " + this._number + ": balance " + this._balance;
+        return "Account " + this.#number + ": balance " + this.#balance;
     }
 
     /**
@@ -80,11 +84,8 @@ class Account {
      * 
      * @returns {undefined}
      */
-    endOfMonth() {
+    endOfMonth(){
         return ""; // does nothing
     }
-}
 
-/* You need the module.exports when testing in node.  Comment it out when you send your file to the browser 
-*/
-exports.Account = Account;
+}
