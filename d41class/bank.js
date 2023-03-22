@@ -19,19 +19,14 @@ export class Bank {
     addSavingsAccount(interestRate) {
         const newSavingAccount = new SavingsAccount(this._accounts.length + 1, interestRate);
         this._accounts.push(newSavingAccount);
-
-
     }
     addCheckingAccount(overdraft) {
         const newCheckingAccount = new CheckingAccount(this._accounts.length + 1, overdraft);
         this._accounts.push(newCheckingAccount);
     }
-    getNumber(){
-        return this.number;
-    }
     closeAccount(number){
         for(let i=0;i<this._accounts.length;i++){
-            if(this._accounts[i].number===this.getNumber()){
+            if(this._accounts[i].number===this.number){
                 this._accounts.splice(i, 1);
                 return;
                 

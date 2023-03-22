@@ -1,12 +1,13 @@
 
 import { Account } from "./account.js";
 
-export class CheckingAccount {
-    _account;
+export class CheckingAccount{
+ _account;
     constructor(number, overdraft) {
-        this._number = number;
+        this._number=number;
         this._overdraft = overdraft;
-        this._account = new Account(number);
+        this._account=new Account(number);
+        
     }
     getOverdraft() {
         return this._overdraft;
@@ -17,8 +18,8 @@ export class CheckingAccount {
     getNumber() {
         return this._number;
     }
-    setNumber(accountNumber) {
-        this._number = accountNumber;
+    setNumber(accountNum) {
+        this._account= accountNum;
     }
     withdraw(amount) {
 
@@ -36,19 +37,22 @@ export class CheckingAccount {
         if (amount <= 0) {
             throw new RangeError("Deposit amount has to be greater than zero");
         }
-        this._account.getBalance() += amount;
+        this._account+= amount;
     }
 
     toString() {
         return `CheckingAccount ${this._number}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
     }
     endOfMonth() {
-        if (this._account.getBalance()<0) {
+        if (this.getBalance()<0) {
             return `Warning, low balance CheckingAccount ${this._number}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
-        }
-        return " ";
+        }else if(this.getBalance()>0){
+            return "";
+        }else{
+       return 0;
         }
     }
+}
     
 
 

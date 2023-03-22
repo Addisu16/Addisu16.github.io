@@ -3,10 +3,10 @@ import { Account } from "./account.js";
 
 export class SavingsAccount {
     _account;
-    constructor(number, interest) {
-        this._number = number;
+    constructor(number,interest) {
+        this._number=number;
         this._interest = interest;
-        this._account = new Account(number);
+        this._account=new Account(number);
     }
     getInterest() {
         return this._interest;
