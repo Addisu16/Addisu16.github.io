@@ -58,5 +58,7 @@
 			"path": "../node_modules"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "d41class"
+	}
 }

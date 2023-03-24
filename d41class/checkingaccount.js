@@ -16,7 +16,7 @@ export class CheckingAccount extends Account{
     }
     withdraw(amount) {
         if ((this.getBalance() - amount) < (-this.getOverdraft())) {
-            throw Error("you can't withdrwal ");
+            throw Error("Insufficient funds, cannot withdraw beyond overdraft limit");
         } else {
             this.setBalance(this.getBalance() - amount);
         }
