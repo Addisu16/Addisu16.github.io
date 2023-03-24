@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 
 const abc = {
   a: 1,

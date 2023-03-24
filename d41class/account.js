@@ -26,6 +26,9 @@ export class Account {
     getNumber() {
         return this.#number;
     }
+    setNumber(accNum){
+        this.#number=accNum;
+    }
 
     /**
      * Accessor for the 'private' balance field
@@ -36,6 +39,9 @@ export class Account {
         return this.#balance;
     }
 
+    setBalance(amount){
+        return this.#balance+=amount;
+    }
     /**
      * Method to add money into the account
      * 
@@ -49,7 +55,9 @@ export class Account {
         }
         this.#balance += amount;
     }
-
+    getDeposit(){
+        return this.deposit;
+    }
     /**
      * Method to take money out of the account
      * 

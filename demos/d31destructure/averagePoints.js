@@ -23,21 +23,21 @@ console.log("expect [1.33, 1, 1] :", averagePoints(players));
 //     return averages;
 // }
 
-// function averagePoints(playerArr){
-//     const pointsArray = playerArr.map(player => player.points).map(pointsArr => pointsArr.reduce((partialAvg, current, index, arr) => partialAvg + current/arr.length, 0));
-//     return pointsArray;
-
-// }
-
 function averagePoints(playerArr){
-    const pointsArray = playerArr.map(player => player.points).map(reduce2average);
+    const pointsArray = playerArr.map(player => player.points).map(pointsArr => pointsArr.reduce((partialAvg, current, index, arr) => partialAvg + current/arr.length, 0));
     return pointsArray;
 
 }
 
+// function averagePoints(playerArr){
+//     const pointsArray = playerArr.map(player => player.points).map(reduce2average);
+//     return pointsArray;
+
+// }
+
 /* use reduce to get average of array of numbers */
-function reduce2average(arr){
-    return arr.reduce((partialAvg, current, index, arr) => partialAvg + current/arr.length, 0);
-}
+// function reduce2average(arr){
+//     return arr.reduce((partialAvg, current, arr) => partialAvg + current/arr.length, 0);
+// }
 
 

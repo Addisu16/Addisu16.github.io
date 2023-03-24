@@ -1,12 +1,11 @@
 
 import { Account } from "./account.js";
 
-export class CheckingAccount{
- _account;
+export class CheckingAccount extends Account{
+ 
     constructor(number, overdraft) {
-        this._number=number;
+        super(number);
         this._overdraft = overdraft;
-        this._account=new Account(number);
         
     }
     getOverdraft() {
@@ -15,44 +14,34 @@ export class CheckingAccount{
     setOverdraft(amount) {
         this._overdraft = amount;
     }
-    getNumber() {
-        return this._number;
-    }
-    setNumber(accountNum) {
-        this._account= accountNum;
-    }
     withdraw(amount) {
-
         if ((this.getBalance() - amount) < (-this.getOverdraft())) {
             throw Error("you can't withdrwal ");
         } else {
-            this._account.setBalance(this.getBalance() - amount);
+            this.setBalance(this.getBalance() - amount);
         }
-    }
-    getBalance() {
-        return this._account.getBalance();
     }
 
     deposit(amount) {
         if (amount <= 0) {
             throw new RangeError("Deposit amount has to be greater than zero");
         }
-        this._account+= amount;
+        super.deposit(amount);
     }
 
     toString() {
-        return `CheckingAccount ${this._number}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
+        return `CheckingAccount ${this.getNumber()}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
     }
     endOfMonth() {
-        if (this.getBalance()<0) {
-            return `Warning, low balance CheckingAccount ${this._number}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
-        }else if(this.getBalance()>0){
+           
+     if((this.getBalance())>0){
             return "";
-        }else{
-       return 0;
-        }
-    }
+     }
+            return `Warning, low balance CheckingAccount ${this.getNumber()}: balance: ${this.getBalance()} overdraft limit: ${this._overdraft}`;
+       }
+ 
 }
+
     
 
 

@@ -39,7 +39,7 @@ bank.debit = function (id, amount) {
   }
 };
 
-bank.credit = function (id, amount) {
+bank.credit=function(id, amount) {
     this.saveTransaction(id, amount);
 };
 
@@ -49,7 +49,7 @@ bank.getBalance = function (id) {
     let totalAmt=0;
     for(const amt of customer.customerTransactions){
 
-34        totalAmt+=amt;
+       totalAmt+=amt;
     }
     return totalAmt;
 
