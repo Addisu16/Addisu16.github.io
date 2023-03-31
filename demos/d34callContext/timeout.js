@@ -11,4 +11,4 @@ console.log("regular call to add: ");
 abc.add();
 /* use add inside a timeout */
 console.log("wait 2 seconds to call: ");
-setTimeout(abc.add, 2000);
+setTimeout(abc.add.bind(abc), 2000);

@@ -6,8 +6,9 @@ const abc = {
       //const self = this;
       this.salute = "Hello";
       console.log(this.salute); //Hello
+      let self=this;
       const setFrench = function(newSalute) {  //inner function
-        this.salute = newSalute;
+        self.salute = newSalute;
       };
       setFrench("Bonjour");
       console.log(this.salute); //Bonjour

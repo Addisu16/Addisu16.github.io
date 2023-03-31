@@ -1,5 +1,8 @@
 let user1=[{x:1},{y:6},{z:8}];
-let user2={x:1,y:6,z:8};
+let user2={
+    x:1,
+    y:6,
+    z:8};
 
 function foo1(){
     const arr=[];

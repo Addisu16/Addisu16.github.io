@@ -63,10 +63,55 @@ const myArrow=(arr, func)=>{
     }
     return result;
   }
+  function myReduce(arr,myFun){
+    const newArray=[];
+    for(let i=0;i<arr.length;i++){
+      newArray.push(myFun(arr[i]));
+    }
+    return newArray;
+  }
 
+
+  function myFilter(arr,fun){
+    for(let i=0;i<arr.length;i++){
+      return fun(arr[i]);
+    }
+    return -1;
+  }
 const Array=[1,2,3,4,5,6];
 console.log("Using anonymous function: ",myAnnon(Array,double));
 console.log("Using anonymous function: ",myAnnon(Array,times100));
 
 console.log("Usig arrow function: ",myArrow(Array,double));
 console.log("Using arrow function: ",myArrow(Array,times100));
+console.log("Using reduce function: ",myReduce(Array,times100));
+console.log("Using myFilter: ",myFilter(Array,times100));
+
+
+function myFun(a,b){
+  return a*b;
+}
+console.log("Invoking a function",myFun(5,2));
+
+const person={
+  firstName:"Addisu",
+  lastName:"Alemayehu",
+  display:function(){
+    return this.firstName+ " "+this.lastName;
+  }
+}
+
+let pp=person.display.bind(person);
+setTimeout(person.display,3000);
+
+
+const myObj=[{x:1,y:4},{x:2,y:6}];
+function myArr(obj){
+  const newArray=[];
+for(const value of obj){
+     newArray.push(value.x+value.y); 
+}
+return newArray;
+}
+console.log("array push method",myArr(myObj));
+

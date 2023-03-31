@@ -1,7 +1,6 @@
 function longestWord(str){
     const word=str.split(" ");
     const max=0;
-    let count=0;
 
     if(word.length-1===0)return 0;
     for(let i=0;i<word.length;i++){

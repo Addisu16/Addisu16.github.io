@@ -11,15 +11,10 @@ export function findTotalPlayerPoints(player) {
     }
     return totalScore;
 }
-    
-
-
-
 export function findTotalScores(players) {
     let totalpts=[];
     for(const player of players){
-        totalpts.push({jersey: player.jersey, total: findTotalPlayerPoints(player)});
-        
+        totalpts.push({jersey: player.jersey, total: findTotalPlayerPoints(player)});  
     }
     return totalpts;
 }

@@ -24,3 +24,10 @@ while(i<prime.length){
     console.log(prime[i]);
     i++;
 }
+// console.log("square function call: ",square);//Reftrence error can nor access square before initialization
+
+const square=function(n){
+    return n*n;
+}
+console.log("square function call: ",square);//[Function: square]
+console.log("square function call: ",square(25));
