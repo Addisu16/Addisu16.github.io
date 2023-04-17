@@ -102,14 +102,14 @@ const person={
 }
 
 let pp=person.display.bind(person);
-setTimeout(person.display,3000);
+setTimeout(pp.bind(pp),3000);
 
 
 const myObj=[{x:1,y:4},{x:2,y:6}];
 function myArr(obj){
   const newArray=[];
 for(const value of obj){
-     newArray.push(value.x+value.y); 
+     newArray.push(Math.abs(value.x-value.y)); 
 }
 return newArray;
 }

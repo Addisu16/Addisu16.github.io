@@ -13,6 +13,7 @@ function ask(question, yes, no) {
     } else {
         no();
   }
+}
   function showOk() {
    console.log( "You agreed." );
   }

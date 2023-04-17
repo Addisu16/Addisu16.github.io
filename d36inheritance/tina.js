@@ -7,7 +7,7 @@ function User(name){
     this.name = name;
     console.log("2:" , this);
     }
-    tina = {};
+    let tina = {};
     const thisUser = User.bind(tina);
     thisUser("Rujuan");
     thisUser("Tina");

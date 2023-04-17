@@ -11,11 +11,10 @@ The bank object should have a transactionsDB property, which will be an array of
 {customerId: 1234, customerTransactions: [10, 50, -40] } would be one element of the array.
 
 */
-
 export const bank = {
-    transactionsDB: [],
+
 };
-bank.transactionsDB = [
+transactionsDB = [
     { customerId: 1, customerTransactions: [10, 50, -40] },
     { customerId: 2, customerTransactions: [10, 10, -10] },
     { customerId: 3, customerTransactions: [5, -5, 55] }];
@@ -78,3 +77,4 @@ function Comparator(bal1,bal2){
 
 /* You need the module.exports when testing in node.  Comment it out when you send your file to the browser */
 // module.exports= {bank }; //add all of your object names here that you need for the node mocha tests
+

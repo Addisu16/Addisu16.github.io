@@ -24,10 +24,11 @@ const student1 = {
       const quizAnswers = student.quizAnswers;
       let score = 0;
       for (let j = 0; j < quizAnswers.length; j++) {
-        if (quizAnswers[j] === correctAnswers[j]) {
+        if (quizAnswers[j] === correctAnswers[j]){
           score++;
         }
       }
+      // gradeReport.push({id:studentId,studentAnswer:score});
       gradeReport[studentId] = score;
     }
     return gradeReport;

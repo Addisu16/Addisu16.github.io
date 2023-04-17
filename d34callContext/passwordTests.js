@@ -21,7 +21,7 @@ describe("fix function that loses 'this'", function () {
 describe("fix function with 'call", function () {
 
   it("tests rockstar", function () {
-      assert.strictEqual(askPassword(function(){return user.loginOk.call(user)}, function(){user.loginFail.call(user)}, "rockstar"), "John logged in");
+      assert.strictEqual(askPassword(function(){return user.loginOk.call(user)}, function(){return user.loginFail.call(user)}, "rockstar"), "John logged in");
   });
   
   it("tests wrong password", function () {
