@@ -41,7 +41,7 @@
 //     add:function(){
 //         console.log(this.a+this.b);
 
-//     }
+//      }
 // };
 // abc.add()
 // //fix this: setTimeout(abc.add,1000);
@@ -57,11 +57,28 @@
 //         console.log(`Heloo ${this.name}`);
 //     }
 // };
-// setTimeout(user4.sayHi,2000); //Hello undefined
+// setTimeout(user4.sayHi(),2000); 
+
+
+
+
+
+
+
+
+
+
+
+
+//Hello undefined
+
+
+
+
 
 // //fix using bind
 // setTimeout(user4.sayHi.bind(user4),2000);
-// //fix using wrapper function
+//fix using wrapper function
 // setTimeout(function(){
 //     user4.sayHi();
 // },2000);
@@ -81,30 +98,45 @@
 // setTimeout(()=>{
 // user4.sayHi();},2000
 // );
-"use strict";
-function a() {
-console.log(this);}
-const b = {
-dog: 'fido',
-log: function() {
-console.log(this); }}
-console.log(this);//undefined
-a();//undefined
-b.log();//{dog:'fido,log:[Function:log]};
-let mylog = b.log;
-mylog();//undefined
+// "use strict";
+// function a() {
+// console.log(this);}
 
+
+
+// const b = {
+// dog: 'fido',
+// log: function() {
+// console.log(this);
+//  }
+// }
+// console.log(this);
+
+// a();
+// b.log();
+// let mylog = b.log;
+// mylog();
+
+
+
+
+
+
+
+
+
+// const square1 = {side: 5, area: area};
 // function area(){
 //     console.log(this);// 
 //     return this.side * this.side;
 //     }
-//     const square1 = {side: 5, area: area};
+    
 //     console.log(square1.area());
 
 
     // function area(){
     //     console.log(this); 
-    //     console.log(this.side)
+    //     // console.log(this.side)
     //     return this.side * this.side;
     //     }
     //     const square1 = {side: 5, area: area};
